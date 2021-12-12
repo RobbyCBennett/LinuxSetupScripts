@@ -4,6 +4,7 @@
 # Set wallpaper
 # Allow desktop icons
 # Favorite Apps
+# Automatic Date & Time
 
 
 # Git
@@ -26,12 +27,29 @@ gsettings set org.gnome.desktop.interface clock-show-weekday true
 gsettings set org.gnome.desktop.background show-desktop-icons true
 # Enable Battery Percentage
 gsettings set org.gnome.desktop.interface show-battery-percentage true
+# Enable Automatically Delete Trash & Temporary Files
+gsettings set org.gnome.privacy remove-old-trash true
+gsettings set org.gnome.privacy remove-old-temp-file true
+gsettings set org.gnome.privacy old-file-age uint32 7
 # Disable Night Light
 gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled false
 # Disable Hot Corners
 gsettings set org.gnome.desktop.interface enable-hot-corners false
 # Disable Dim
 gsettings set org.gnome.settings-daemon.plugins.power idle-dim false
+# Disable Notifications in Lock Screen
+gsettings set org.gnome.desktop.notifications show-in-lock-screen false
+# Disable Workspaces
+gsettings set org.gnome.mutter dynamic-workspaces false
+gsettings set org.gnome.desktop.wm.preferences num-workspaces 1
+# Disable Automatic Screen Lock
+gsettings set org.gnome.desktop.session idle-delay uint32 0
+gsettings set org.gnome.desktop.screensaver lock-enabled false
+# Disable Automatic Dim
+gsettings set org.gnome.settings-daemon.plugins.power power-saver-profile-on-low-battery false
+# Disable Automatic Suspend
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'nothing'
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
 # Change Power Button Action
 gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'interactive'
 
