@@ -1,5 +1,5 @@
 # Todo:
-# Remove scrollbar in terminal
+# Remove scrollbar in terminal: https://askubuntu.com/questions/1068595/edit-gnome-terminal-profile-from-command-line-on-18-04
 # Copy, unzip & move wallpapers
 # Set wallpaper
 # Allow desktop icons
