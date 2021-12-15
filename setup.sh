@@ -1,10 +1,8 @@
 # Todo:
-# Copy, unzip & move wallpapers
 # Set wallpaper
 # Allow desktop icons
-# Favorite Apps
-# Automatic Date & Time
-# Enable Desktop Icons
+# Favorite apps
+# Automatic date & time (ntp)
 
 
 # Git
