@@ -5,6 +5,7 @@
 # Allow desktop icons
 # Favorite Apps
 # Automatic Date & Time
+# Enable Desktop Icons
 
 
 # Git
@@ -23,14 +24,12 @@ gsettings set org.gnome.desktop.interface cursor-theme 'xcursor-breeze-snow'
 # Change Clock Format
 gsettings set org.gnome.desktop.interface clock-format '12h'
 gsettings set org.gnome.desktop.interface clock-show-weekday true
-# Enable Desktop Icons
-gsettings set org.gnome.desktop.background show-desktop-icons true
 # Enable Battery Percentage
 gsettings set org.gnome.desktop.interface show-battery-percentage true
 # Enable Automatically Delete Trash & Temporary Files
-gsettings set org.gnome.privacy remove-old-trash true
-gsettings set org.gnome.privacy remove-old-temp-file true
-gsettings set org.gnome.privacy old-file-age uint32 7
+gsettings set org.gnome.desktop.privacy remove-old-trash-files true
+gsettings set org.gnome.desktop.privacy remove-old-temp-files true
+gsettings set org.gnome.desktop.privacy old-files-age 7
 # Disable Night Light
 gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled false
 # Disable Hot Corners
@@ -43,7 +42,7 @@ gsettings set org.gnome.desktop.notifications show-in-lock-screen false
 gsettings set org.gnome.mutter dynamic-workspaces false
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 1
 # Disable Automatic Screen Lock
-gsettings set org.gnome.desktop.session idle-delay uint32 0
+gsettings set org.gnome.desktop.session idle-delay 0
 gsettings set org.gnome.desktop.screensaver lock-enabled false
 # Disable Automatic Dim
 gsettings set org.gnome.settings-daemon.plugins.power power-saver-profile-on-low-battery false
@@ -72,7 +71,7 @@ sudo pacman -S nodejs npm --noconfirm
 # Programming - React Native
 sudo npm install -g expo-cli
 # Keyboard Shortcuts
-sudo pamac build keyd-git --no-confirm
+yes | sudo pamac build keyd-git
 
 # Default Application
 # Browser
