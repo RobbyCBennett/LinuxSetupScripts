@@ -1,5 +1,4 @@
 # Todo:
-# Remove scrollbar in terminal: https://askubuntu.com/questions/1068595/edit-gnome-terminal-profile-from-command-line-on-18-04
 # Copy, unzip & move wallpapers
 # Set wallpaper
 # Allow desktop icons
@@ -51,6 +50,13 @@ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-typ
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
 # Change Power Button Action
 gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'interactive'
+# Change Terminal Profile Settings
+profile=$(gsettings get org.gnome.Terminal.ProfilesList default)
+profile=${profile:1:-1}
+terminalConfig='org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:'
+gsettings '$terminalConfig$profile/' audible-bell false
+gsettings '$terminalConfig$profile/' cursor-shape 'ibeam'
+gsettings '$terminalConfig$profile/' scrollbar-policy='never'
 
 # Uninstallation
 # User Apps
@@ -60,7 +66,7 @@ sudo pacman -R manjaro-gnome-tour manjaro-hello --noconfirm
 # Installation
 # System Update
 sudo pacman -Syu
-# User Apps 
+# User Apps
 sudo pacman -S brave-browser discord --noconfirm
 # Programming - General
 sudo pacman -S make vim vscode --noconfirm
