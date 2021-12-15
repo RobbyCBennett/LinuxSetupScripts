@@ -53,10 +53,10 @@ gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'inter
 # Change Terminal Profile Settings
 profile=$(gsettings get org.gnome.Terminal.ProfilesList default)
 profile=${profile:1:-1}
-terminalConfig='org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:'$profile
-gsettings $terminalConfig audible-bell false
-gsettings $terminalConfig cursor-shape 'ibeam'
-gsettings $terminalConfig scrollbar-policy='never'
+setting=org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/
+gsettings set $setting audible-bell false
+gsettings set $setting cursor-shape 'ibeam'
+gsettings set $setting scrollbar-policy 'never'
 
 # Uninstallation
 # User Apps
