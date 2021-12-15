@@ -1,8 +1,5 @@
 # Todo:
-# Set wallpaper
 # Allow desktop icons
-# Favorite apps
-# Automatic date & time (ntp)
 
 
 # Git
@@ -21,6 +18,8 @@ gsettings set org.gnome.desktop.interface cursor-theme 'xcursor-breeze-snow'
 # Change Clock Format
 gsettings set org.gnome.desktop.interface clock-format '12h'
 gsettings set org.gnome.desktop.interface clock-show-weekday true
+# Enable Network Time Protocol
+timedatectl set-ntp true
 # Enable Battery Percentage
 gsettings set org.gnome.desktop.interface show-battery-percentage true
 # Enable Automatically Delete Trash & Temporary Files
