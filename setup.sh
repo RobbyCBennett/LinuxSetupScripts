@@ -1,5 +1,5 @@
 # Todo:
-# Allow desktop icons
+# Applications in top bar, not grouped, monochrome
 
 
 # Git
@@ -55,6 +55,14 @@ gsettings set $setting audible-bell false
 gsettings set $setting cursor-shape 'ibeam'
 gsettings set $setting scrollbar-policy 'never'
 
+# Extensions
+# Enable Desktop Icons
+gnome-extensions enable ding@rasterssoft.com
+gsettings set org.gnome.shell.extensions.ding icon-size 'small'
+gsettings set org.gnome.shell.extensions.ding show-drop-place false
+gsettings set org.gnome.shell.extensions.ding show-home false
+gsettings set org.gnome.shell.extensions.ding show-trash false
+
 # Uninstallation
 # User Apps
 sudo pacman -R firefox-gnome-theme-maia firefox --noconfirm
@@ -80,7 +88,12 @@ yes | sudo pamac build keyd-git
 # Browser
 xdg-settings set default-web-browser brave.desktop
 
-# Keyboard Shortcuts
+# Keyboard Shortcuts: Gnome
+gsettings set org.gnome.desktop.wm.keybindings switch-windows '[]'
+gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward '[]'
+gsettings set org.gnome.desktop.wm.keybindings cycle-windows '["<Alt>Tab"]'
+gsettings set org.gnome.desktop.wm.keybindings cycle-windows-backward '["<Shift><Alt>Tab"]'
+# Keyboard Shortcuts: keyd
 sudo cp default.cfg /etc/keyd/.
 sudo systemctl start keyd # FIX ME
 sudo systemctl status keyd
