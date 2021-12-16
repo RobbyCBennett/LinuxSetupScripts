@@ -63,6 +63,10 @@ gsettings set org.gnome.shell.extensions.ding icon-size 'small'
 gsettings set org.gnome.shell.extensions.ding show-drop-place false
 gsettings set org.gnome.shell.extensions.ding show-home false
 gsettings set org.gnome.shell.extensions.ding show-trash false
+# Disable Pamac Updates Indicator
+gnome-extensions disable pamac-updates@manjaro.org
+# Disable AppIndicator and KStatusNotifierItem Support
+gnome-extensions disable appindicatorsupport@rgcjonas.gmail.com
 # Disable Dash to Dock
 gnome-extensions disable dash-to-dock@micxgx.gmail.com
 # Enable Dash to Panel
