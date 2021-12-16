@@ -78,8 +78,8 @@ gsettings set org.gnome.shell.extensions.dash-to-panel dot-size 0
 gsettings set org.gnome.shell.extensions.dash-to-panel dot-style-focused 'DOTS'
 gsettings set org.gnome.shell.extensions.dash-to-panel dot-style-unfocused 'DOTS'
 gsettings set org.gnome.shell.extensions.dash-to-panel focus-highlight false
-gsettings set org.gnome.shell.extensions.dash-to-panel group-apps=false
-gsettings set org.gnome.shell.extensions.dash-to-panel group-apps-label-font-size=14
+gsettings set org.gnome.shell.extensions.dash-to-panel group-apps false
+gsettings set org.gnome.shell.extensions.dash-to-panel group-apps-label-font-size 14
 gsettings set org.gnome.shell.extensions.dash-to-panel group-apps-label-font-weight 'inherit'
 gsettings set org.gnome.shell.extensions.dash-to-panel group-apps-label-max-width 0
 gsettings set org.gnome.shell.extensions.dash-to-panel group-apps-underline-unfocused true
@@ -105,7 +105,7 @@ gsettings set org.gnome.shell.extensions.dash-to-panel scroll-icon-action 'NOTHI
 gsettings set org.gnome.shell.extensions.dash-to-panel scroll-panel-action 'NOTHING'
 gsettings set org.gnome.shell.extensions.dash-to-panel secondarymenu-contains-showdetails true
 gsettings set org.gnome.shell.extensions.dash-to-panel shift-click-action 'MINIMIZE'
-gsettings set org.gnome.shell.extensions.dash-to-panel shift-middle-click-action='LAUNCH'
+gsettings set org.gnome.shell.extensions.dash-to-panel shift-middle-click-action 'LAUNCH'
 gsettings set org.gnome.shell.extensions.dash-to-panel show-appmenu false
 gsettings set org.gnome.shell.extensions.dash-to-panel show-favorites false
 gsettings set org.gnome.shell.extensions.dash-to-panel show-favorites-all-monitors true
