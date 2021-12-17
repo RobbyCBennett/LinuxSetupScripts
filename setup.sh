@@ -1,5 +1,5 @@
 # Todo:
-# Show Applications tweaks
+# Corner snapping
 # Keyboard shortcuts
 
 
@@ -56,7 +56,7 @@ gsettings set $setting audible-bell false
 gsettings set $setting cursor-shape 'ibeam'
 gsettings set $setting scrollbar-policy 'never'
 
-# Extensions
+# Built-in Extensions
 # Enable Desktop Icons NG (DING)
 gnome-extensions enable ding@rastersoft.com
 gsettings set org.gnome.shell.extensions.ding icon-size 'small'
@@ -98,7 +98,7 @@ gsettings set org.gnome.shell.extensions.dash-to-panel leftbox-size 0
 gsettings set org.gnome.shell.extensions.dash-to-panel middle-click-action 'LAUNCH'
 gsettings set org.gnome.shell.extensions.dash-to-panel overview-click-to-exit false
 gsettings set org.gnome.shell.extensions.dash-to-panel panel-anchors '{"0":"MIDDLE"}'
-gsettings set org.gnome.shell.extensions.dash-to-panel panel-element-positions '{"0":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"dateMenu","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":false,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"centerMonitor"},{"element":"centerBox","visible":false,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'
+gsettings set org.gnome.shell.extensions.dash-to-panel panel-element-positions '{"0":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"dateMenu","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":false,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"centerMonitor"},{"element":"centerBox","visible":false,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'
 gsettings set org.gnome.shell.extensions.dash-to-panel panel-lengths '{"0":100}'
 gsettings set org.gnome.shell.extensions.dash-to-panel panel-positions '{"0":"TOP"}'
 gsettings set org.gnome.shell.extensions.dash-to-panel panel-sizes '{"0":48}'
@@ -131,6 +131,11 @@ gsettings set org.gnome.shell.extensions.dash-to-panel window-preview-show-title
 gsettings set org.gnome.shell.extensions.dash-to-panel window-preview-size 180
 gsettings set org.gnome.shell.extensions.dash-to-panel window-preview-title-position 'TOP'
 
+# Other Extensions
+# No Overview at Start-up
+wget https://extensions/gnome/org/extension-data/no-overviewfthx.v11.shell-extension.zip
+gnome-extensions enable nooverviewfthx.v11.shell-extension.zip
+
 # Uninstallation
 # User Apps
 sudo pacman -R firefox-gnome-theme-maia firefox --noconfirm
@@ -141,6 +146,9 @@ sudo pacman -R manjaro-gnome-tour manjaro-hello --noconfirm
 sudo pacman -Syu
 # User Apps
 sudo pacman -S brave-browser discord --noconfirm
+# Launcher
+sudo pacman -S wmctrl --noconfirm
+yes | pamac build ulauncher
 # Programming - General
 sudo pacman -S make vim vscode --noconfirm
 # Programming - Python
@@ -150,18 +158,27 @@ sudo pacman -S nodejs npm --noconfirm
 # Programming - React Native
 sudo npm install -g expo-cli
 # Keyboard Shortcuts
-yes | sudo pamac build keyd-git
+yes | pamac build keyd-git
 
 # Default Application
 # Browser
 xdg-settings set default-web-browser brave.desktop
 
+# Application Config
+cp -r ulauncher ~/.config/ulauncher
+
 # Keyboard Shortcuts: Gnome
+# Alt+Tab: Cycle Windows Faster
 gsettings set org.gnome.desktop.wm.keybindings switch-windows '[]'
 gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward '[]'
 gsettings set org.gnome.desktop.wm.keybindings cycle-windows '["<Alt>Tab"]'
 gsettings set org.gnome.desktop.wm.keybindings cycle-windows-backward '["<Shift><Alt>Tab"]'
+# Shift Space: Ulauncher
+gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings '["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"]'
+gsettings set org.gnome.settings-daemon.plugins.media-keys:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'Ulauncher Toggle'
+gsettings set org.gnome.settings-daemon.plugins.media-keys:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command 'ulauncher-toggle'
+gsettings set org.gnome.settings-daemon.plugins.media-keys:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding '<Alt>space'
 # Keyboard Shortcuts: keyd
-sudo cp default.cfg /etc/keyd/.
+sudo cp keyboard.cfg /etc/keyd/.
 sudo systemctl start keyd # FIX ME
 sudo systemctl status keyd
