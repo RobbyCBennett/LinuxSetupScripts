@@ -1,0 +1,27 @@
+Possible Names
+    Popcorn OS
+    Wall OS
+
+Home screen
+    Time & date
+    Favorite apps
+        Popcorn
+        Chrome
+        YouTube
+        Spotify
+        Cast
+        Settings
+    Movies you haven't seen in a while
+
+Multiple accounts
+    Personal home screen
+    Personal watch lists/playlists
+
+Wireless stream
+    Android
+    Windows
+    Linux
+
+Search
+
+Settings
