@@ -1,6 +1,10 @@
-# Todo:
-# Corner snapping
-# Keyboard shortcuts
+# To do before switching:
+	# Keyboard shortcuts
+
+# To do later
+	# System info in top bar
+	# Weather in top bar
+	# Figure out extension installation without wget
 
 
 # Git
@@ -134,7 +138,15 @@ gsettings set org.gnome.shell.extensions.dash-to-panel window-preview-title-posi
 # Other Extensions
 # No Overview at Start-up
 wget https://extensions/gnome/org/extension-data/no-overviewfthx.v11.shell-extension.zip
-gnome-extensions enable nooverviewfthx.v11.shell-extension.zip
+gnome-extensions install nooverviewfthx.v11.shell-extension.zip
+# Clipboard Indicator
+wget https://extensions/gnome/org/extension-data/clipboard-indicator.com.v39.shell-extension.zip
+gnome-extensions install clipboard-indicator.com.v39.shell-extension.zip
+# Tiling Assistant
+wget https://extensions/gnome/org/extension-data/tiling-assistantleleat-on-github.v31.shell-extension.zip
+gnome-extensions install tiling-assistantleleat-on-github.v31.shell-extension.zip
+# Cleanup
+rm *.shell-extension.zip
 
 # Uninstallation
 # User Apps
@@ -146,6 +158,8 @@ sudo pacman -R manjaro-gnome-tour manjaro-hello --noconfirm
 sudo pacman -Syu
 # User Apps
 sudo pacman -S brave-browser discord --noconfirm
+# App Config Tool
+sudo pacman -S alacarte --noconfirm
 # Launcher
 sudo pacman -S wmctrl --noconfirm
 yes | pamac build ulauncher
