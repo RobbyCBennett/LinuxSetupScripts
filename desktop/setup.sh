@@ -1,5 +1,7 @@
 # To do before switching:
 	# Keyboard shortcuts
+	# Fix taskbar glitch
+	# Chromium back gesture
 
 # To do later
 	# System info in top bar
