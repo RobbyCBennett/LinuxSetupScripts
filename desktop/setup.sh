@@ -1,5 +1,5 @@
 # To do before switching:
-	# Keyboard shortcuts
+	# Keyboard shortcuts: github.com/sezanzeb/input-remapper
 	# Fix taskbar glitch
 	# Chromium back gesture
 
